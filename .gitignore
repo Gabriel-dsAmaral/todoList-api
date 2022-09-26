@@ -1,0 +1,12 @@
+.idea/
+.vscode/
+node_modules/
+build/
+tmp/
+temp/
+.env
+*.lock
+package-lock*
+:memory
+node_modules
+dist/
