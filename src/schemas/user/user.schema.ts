@@ -1,9 +1,11 @@
 import * as yup from "yup";
+import { serializedArrEventsSchema } from "../task/create.schema";
 
 const responseObject = {
   id: yup.string().uuid().required(),
   user_name: yup.string().required(),
   email: yup.string().email().lowercase().required(),
+  tasks: serializedArrEventsSchema,
 };
 
 const newShape = Object.entries(responseObject)

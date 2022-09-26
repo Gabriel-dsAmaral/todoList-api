@@ -17,7 +17,7 @@ export const AppDataSource =
         type: "postgres",
         url: process.env.DATABASE_URL,
         // ssl: { rejectUnauthorized: false },
-        logging: true,
+        logging: false,
         entities: [path.join(__dirname, "./entities/**/*.{js,ts}")],
         migrations: [path.join(__dirname, "./migrations/**/*.{js,ts}")],
       });
