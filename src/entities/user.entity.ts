@@ -3,8 +3,6 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
-  ManyToMany,
-  JoinTable,
   BeforeInsert,
   BeforeUpdate,
   OneToMany,
@@ -24,6 +22,9 @@ export class User {
 
   @Column()
   password: string;
+
+  @Column({ default: false })
+  is_superuser: boolean;
 
   @OneToMany((type) => Task, (task) => task.user, {
     eager: true,

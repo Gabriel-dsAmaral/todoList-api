@@ -2,14 +2,14 @@ import { Repository, UpdateResult } from "typeorm";
 import { AppDataSource } from "../data-source";
 import { Task } from "../entities/task.entity";
 
-interface ITaskRepo {
+interface ITaskRepository {
   save: (task: Partial<Task>) => Promise<Task>;
   findOne: (payload: object) => Promise<Task | null>;
   getAll: () => Promise<Task[]>;
   update: (id: string, payload: Partial<Task>) => Promise<UpdateResult>;
 }
 
-class TaskRepo implements ITaskRepo {
+class TaskRepo implements ITaskRepository {
   private ormRepo: Repository<Task>;
 
   constructor() {
