@@ -16,10 +16,10 @@ const newShape = Object.entries(responseObject)
 
 const serializedCreateTaskSchema = yup.object().shape(newShape);
 
-const serializedArrEventsSchema = yup.array().of(yup.object().shape(newShape));
+const serializedArrTasksSchema = yup.array().of(yup.object().shape(newShape));
 
 export {
   createTaskSchema,
   serializedCreateTaskSchema,
-  serializedArrEventsSchema,
+  serializedArrTasksSchema,
 };

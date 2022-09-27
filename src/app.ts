@@ -7,6 +7,8 @@ import { errorHandling } from "./middlewares";
 
 const app = express();
 
+app.use(cors());
+
 app.use(express.json());
 
 registerRouters(app);
