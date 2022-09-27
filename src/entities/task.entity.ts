@@ -1,4 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToOne,
+  JoinTable,
+} from "typeorm";
 import { User } from "./user.entity";
 
 @Entity("tasks")
@@ -14,4 +20,7 @@ export class Task {
 
   @ManyToOne((type) => User, (user) => user.tasks)
   user: User;
+
+  @JoinTable()
+  taskOwner: User;
 }

@@ -3,8 +3,7 @@ import UserService from "../services/user.service";
 
 class UserController {
   createUser = async (req: Request, res: Response) => {
-    const user = await UserService.createUser(req);
-    return res.status(201).json(user);
+    return res.status(201).json(await UserService.createUser(req));
   };
 
   loginUser = async (req: Request, res: Response) => {
